@@ -39,17 +39,43 @@ function generatePassword(){
   
   // WHEN I answer each prompt
   // THEN my input should be validated and at least one character type should be selected
-  
+  if (lowerCase) {
+    console.log(true)
+  }
+
+  if (upperCase) {
+    console.log(true)
+  }
+
+  if (numeric) {
+    console.log(true)
+  }
+
+  if (special) {
+    console.log(true)
+  }
 
   // WHEN all prompts are answered
   // THEN a password is generated that matches the selected criteria
+
+  const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  const numbers = "0123456789";
+
+  const symbols = "!@#$%^&*()_+-=[]{}|;:,.<>?";
+
+  const allChars = letters + numbers + symbols;
+
   
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * allChars.length);
+    password += allChars[randomIndex];
+  }
 
   // WHEN the password is generated
   // THEN the password is either displayed in an alert or written to the page
   
   return password;
 }
-
 
 
